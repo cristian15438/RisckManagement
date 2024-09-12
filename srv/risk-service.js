@@ -90,7 +90,7 @@ module.exports = cds.service.impl(async function () {
 
         const asArray = x => Array.isArray(x) ? x : [x];
 
-        // Request all associated BusinessPartners
+        // Request all associated BusinessPartnersc
         const bpIDs = asArray(risks).map(risk => risk.bp_BusinessPartner);
         const busienssPartners = await BPsrv.transaction(req).send({
             query: SELECT.from(this.entities.BusinessPartners).where({ BusinessPartner: bpIDs }),
